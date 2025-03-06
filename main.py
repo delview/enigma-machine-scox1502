@@ -1,6 +1,4 @@
-decript_phone = []
-encripted_code = []
-decripted_code = []
+
 
 code_encrypt = {
     "a": "2", "b": "22", "c": "222", "d": "3", "e": "33", "f": "333", "g": "4", "h": "44", "i": "444", 
@@ -14,17 +12,28 @@ code_decrypt = {
     "7777": "s", "8": "t", "88": "u", "888": "v", "9": "w", "99": "x", "999": "y", "9999": "z",
 }
 
+list_decrypter = [code_decrypt]
+
 print("hello wellcome to the encript and decripting program.")
 print("This program can be used to decript and encript phone code")
 while True:
     choice = input("will you be decripting or encripting code this time? [encript/decript] ")
     if choice == "encript":
         choice = input("please enter what you want to encript: ")
-        
+
         break
 
     elif choice == "decript":
         choice = input("please enter what you would like to decript: ")
+        if choice.isdigit():
+            text = choice
+            char_list = 
+            print(char_list)
+            break
+
+        else:
+            print("that is not a valid option, phone code decript can only be digits")
+
         break
 
     else:
