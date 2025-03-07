@@ -14,13 +14,13 @@ code_decrypt = {
 }
 
 print("Hello! Welcome to the encrypting and decrypting program.")
-print("This program can be used to decrypt and encrypt phone codes.")
+print("This program can be used to decrypt and encrypt phone codes whitch are a type of code number pad flipphones used to text people with.")
 
 while True:
-    choice = input("Will you be decrypting or encrypting code this time? [encrypt/decrypt] ").lower()
+    choice = input("Will you be decrypting or encrypting code today? [encrypter/decrypter] ").lower()
     
     if choice == "encrypt":
-        text_to_encrypt = input("Please enter what you want to encrypt: ").lower()
+        text_to_encrypt = input("Please enter what you want to encrypt please note it must be in only letters: ").lower()
         for char in text_to_encrypt:
             if char in code_encrypt:
                 new_code.append(code_encrypt[char])
@@ -30,15 +30,15 @@ while True:
         break
     
     elif choice == "decrypt":
-        text_to_decrypt = input("Please enter the code to decrypt (use spaces between codes): ").split()
+        text_to_decrypt = input("Please enter the code to decrypt (use spaces between codes and only use numbers) (if you are un familiar with phone code try the encrypter first): ").split()
         for code in text_to_decrypt:
             if code in code_decrypt:
                 decrypted_text.append(code_decrypt[code])
             else:
-                decrypted_text.append('?')
+                decrypted_text.append('')
         print("Decrypted text:", ''.join(decrypted_text))
         break
     
     else:
-        print("That's not an option! Please enter either 'encrypt' or 'decrypt' to proceed.")
+        print("That's not an option. please enter either 'encrypt' or 'decrypt' to proceed.")
         pass
