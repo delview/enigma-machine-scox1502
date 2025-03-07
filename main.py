@@ -17,28 +17,48 @@ print("Hello! Welcome to the encrypting and decrypting program.")
 print("This program can be used to decrypt and encrypt phone codes whitch are a type of code number pad flipphones used to text people with.")
 
 while True:
-    choice = input("Will you be decrypting or encrypting code today? [encrypter/decrypter] ").lower()
+    print("")
+    choice = input("Will you be decrypting or encrypting code today? [encrypt/decrypt] ").lower()
     
     if choice == "encrypt":
-        text_to_encrypt = input("Please enter what you want to encrypt please note it must be in only letters: ").lower()
-        for char in text_to_encrypt:
+        print("")
+        print("Please enter what you want to encrypt please note it must be in only letters")
+        print("")
+        choice = input(": ").lower()
+        print("")
+        for char in choice:
             if char in code_encrypt:
                 new_code.append(code_encrypt[char])
             else:
                 new_code.append(char)
         print("Encrypted code:", ' '.join(new_code))
-        break
+        print("")
     
     elif choice == "decrypt":
-        text_to_decrypt = input("Please enter the code to decrypt (use spaces between codes and only use numbers) (if you are un familiar with phone code try the encrypter first): ").split()
-        for code in text_to_decrypt:
+        print("")
+        print("Please enter the code to decrypt (use spaces between codes and only use numbers) (if you are un familiar with phone code try the encrypter first)")
+        print("")
+        choice = input(": ").split()
+        print("")
+        for code in choice:
             if code in code_decrypt:
                 decrypted_text.append(code_decrypt[code])
             else:
                 decrypted_text.append('')
-        print("Decrypted text:", ''.join(decrypted_text))
-        break
+        print(" the decrypted text say's:", ''.join(decrypted_text))
+        print("")
+
     
     else:
         print("That's not an option. please enter either 'encrypt' or 'decrypt' to proceed.")
         pass
+
+    choice = input("would you like to encrypt or decript something else? [yes/no] ")
+    if choice == "yes":
+        print("")
+        print("ok lets continue")
+        pass
+    if choice == "no":
+        print("")
+        print("ok goodbye")
+        break
