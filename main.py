@@ -1,4 +1,5 @@
-
+new_code = []
+decrypted_text = []
 
 code_encrypt = {
     "a": "2", "b": "22", "c": "222", "d": "3", "e": "33", "f": "333", "g": "4", "h": "44", "i": "444", 
@@ -12,30 +13,26 @@ code_decrypt = {
     "7777": "s", "8": "t", "88": "u", "888": "v", "9": "w", "99": "x", "999": "y", "9999": "z",
 }
 
-list_decrypter = [code_decrypt]
+print("Hello! Welcome to the encrypting and decrypting program.")
+print("This program can be used to decrypt and encrypt phone codes.")
 
-print("hello wellcome to the encript and decripting program.")
-print("This program can be used to decript and encript phone code")
 while True:
-    choice = input("will you be decripting or encripting code this time? [encript/decript] ")
-    if choice == "encript":
-        choice = input("please enter what you want to encript: ")
+    choice = input("Will you be decrypting or encrypting code this time? [encrypt/decrypt] ").lower()
+    
+    if choice == "encrypt":
 
         break
-
-    elif choice == "decript":
-        choice = input("please enter what you would like to decript: ")
-        if choice.isdigit():
-            text = choice
-            char_list = 
-            print(char_list)
-            break
-
-        else:
-            print("that is not a valid option, phone code decript can only be digits")
-
+    
+    elif choice == "decrypt":
+        text_to_decrypt = input("Please enter the code to decrypt (use spaces between codes): ").split()
+        for code in text_to_decrypt:
+            if code in code_decrypt:
+                decrypted_text.append(code_decrypt[code])
+            else:
+                decrypted_text.append('?')
+        print("Decrypted text:", ''.join(decrypted_text))
         break
-
+    
     else:
-        print("thats not an option, please enter ether encript or dycript for this program to work")
+        print("That's not an option! Please enter either 'encrypt' or 'decrypt' to proceed.")
         pass
