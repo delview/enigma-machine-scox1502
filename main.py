@@ -20,7 +20,13 @@ while True:
     choice = input("Will you be decrypting or encrypting code this time? [encrypt/decrypt] ").lower()
     
     if choice == "encrypt":
-
+        text_to_encrypt = input("Please enter what you want to encrypt: ").lower()
+        for char in text_to_encrypt:
+            if char in code_encrypt:
+                new_code.append(code_encrypt[char])
+            else:
+                new_code.append(char)
+        print("Encrypted code:", ' '.join(new_code))
         break
     
     elif choice == "decrypt":
